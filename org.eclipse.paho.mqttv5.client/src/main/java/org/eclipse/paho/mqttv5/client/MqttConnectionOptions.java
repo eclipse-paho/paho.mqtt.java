@@ -510,12 +510,15 @@ public class MqttConnectionOptions {
 	 * the maximum time that the broker will maintain the session for once the
 	 * client disconnects. Clients should only connect with a long Session Expiry
 	 * interval if they intend to connect to the server at some later point in time.
-	 * 
+	 *
 	 * <ul>
 	 * <li>By default this value is null and so will not be sent, in this case, the
 	 * session will not expire.</li>
-	 * <li>If a 0 is sent, the session will end immediately once the Network
+	 * <li>If a 0 is sent, or if is absent, the session will end immediately once the Network
 	 * Connection is closed.</li>
+	 * <li>If the Session Expiry Interval is 0xFFFFFFFF (UINT_MAX), the Session does not expire.</li>
+	 * <li>The Client and Server MUST store the Session State after the Network Connection is closed if
+	 * the Session Expiry Interval is greater than 0</li>
 	 * </ul>
 	 * 
 	 * When the client has determined that it has no longer any use for the session,
