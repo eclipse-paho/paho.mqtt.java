@@ -470,11 +470,11 @@ public class MqttProperties {
 					} else if (identifier == REASON_STRING_IDENTIFIER) {
 						reasonString = MqttDataTypes.decodeUTF8(inputStream);
 					} else if (identifier == RECEIVE_MAXIMUM_IDENTIFIER) {
-						receiveMaximum = (int) inputStream.readShort();
+						receiveMaximum = inputStream.readUnsignedShort();
 					} else if (identifier == TOPIC_ALIAS_MAXIMUM_IDENTIFIER) {
-						topicAliasMaximum = (int) inputStream.readShort();
+						topicAliasMaximum = inputStream.readUnsignedShort();
 					} else if (identifier == TOPIC_ALIAS_IDENTIFIER) {
-						topicAlias = (int) inputStream.readShort();
+						topicAlias = inputStream.readUnsignedShort();
 					} else if (identifier == MAXIMUM_QOS_IDENTIFIER) {
 						maximumQoS = inputStream.read();
 					} else if (identifier == RETAIN_AVAILABLE_IDENTIFIER) {
