@@ -25,7 +25,7 @@ import org.eclipse.paho.client.mqttv3.MqttException;
  * A NetworkModule provides access to a specific transport to the broker. This may be a plain socket, a TLS secured
  * connection, a serial line, etc.
  *
- * <h3>Lifecycle</h3>
+ * <h2>Lifecycle</h2>
  * Each NetworkModule instance has a lifecycle with the following logical states:
  * <ul>
  * <li><b>CREATED</b> - the instance holds no connection to its broker, no network resources are allocated and the
