@@ -35,7 +35,7 @@ import org.eclipse.paho.mqttv5.common.MqttPersistenceException;
  * It is up to the persistence interface to log any exceptions or error information 
  * which may be required when diagnosing a persistence failure.</p>
  */
-public interface MqttClientPersistence {
+public interface MqttClientPersistence extends AutoCloseable {
 	/**
 	 * Initialise the persistent store.
 	 * If a persistent store exists for this client ID then open it, otherwise 
