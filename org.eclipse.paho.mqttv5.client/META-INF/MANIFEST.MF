@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.paho.mqttv5.client
 Bundle-ManifestVersion: 2
 Bundle-Name: Paho Mqtt Client
 Bundle-SymbolicName: org.eclipse.paho.mqttv5.client
