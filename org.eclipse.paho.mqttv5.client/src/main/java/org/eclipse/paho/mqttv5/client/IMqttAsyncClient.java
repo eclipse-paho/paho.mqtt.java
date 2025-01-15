@@ -24,7 +24,7 @@ import org.eclipse.paho.mqttv5.common.MqttSecurityException;
 import org.eclipse.paho.mqttv5.common.MqttSubscription;
 import org.eclipse.paho.mqttv5.common.packet.MqttProperties;
 
-public interface IMqttAsyncClient {
+public interface IMqttAsyncClient extends AutoCloseable {
 
 	/**
 	 * Connects to an MQTT server using the default options.
