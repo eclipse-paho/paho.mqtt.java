@@ -235,6 +235,8 @@ public abstract class MqttWireMessage {
 			return result;
 		} catch (IOException io) {
 			throw new MqttException(io);
+		} catch (Exception ex) {
+			throw new MqttException(ex);
 		}
 	}
 
@@ -324,8 +326,8 @@ public abstract class MqttWireMessage {
 	 *             the data to the stream
 	 */
 	public static void encodeUTF8(DataOutputStream dos, String stringToEncode) throws MqttException {
-		validateUTF8String(stringToEncode);
 		try {
+			validateUTF8String(stringToEncode);
 
 			byte[] encodedString = stringToEncode.getBytes(STRING_ENCODING);
 			byte byte1 = (byte) ((encodedString.length >>> 8) & 0xFF);
@@ -337,6 +339,8 @@ public abstract class MqttWireMessage {
 		} catch (UnsupportedEncodingException ex) {
 			throw new MqttException(ex);
 		} catch (IOException ex) {
+			throw new MqttException(ex);
+		} catch (Exception ex) {
 			throw new MqttException(ex);
 		}
 	}
@@ -366,6 +370,8 @@ public abstract class MqttWireMessage {
 
 			return output;
 		} catch (IOException ex) {
+			throw new MqttException(ex);
+		} catch (Exception ex) {
 			throw new MqttException(ex);
 		}
 	}
